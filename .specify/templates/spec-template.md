@@ -5,6 +5,16 @@
 **Status**: Draft  
 **Input**: User description: "$ARGUMENTS"
 
+## Constitution Alignment *(mandatory)*
+
+- Confirm whether this feature introduces or modifies Tauri commands.
+- List every payload/response type that MUST be added or updated in `src/lib/types`.
+- Confirm heavy processing and file I/O remain in Rust and are not implemented in
+  frontend code.
+- Confirm UI implementation uses `shadcn-svelte` and Tailwind utility classes.
+- Confirm any FFmpeg behavior is implemented only through the Rust FFmpeg module and
+  command layer.
+
 ## User Scenarios & Testing *(mandatory)*
 
 <!--
@@ -89,11 +99,15 @@
 - **FR-003**: Users MUST be able to [key interaction, e.g., "reset their password"]
 - **FR-004**: System MUST [data requirement, e.g., "persist user preferences"]
 - **FR-005**: System MUST [behavior, e.g., "log all security events"]
+- **FR-006**: System MUST define typed TypeScript interfaces for all new/changed Tauri
+  command payloads and responses in `src/lib/types`.
+- **FR-007**: System MUST keep heavy processing and media I/O in Rust backend modules.
+- **FR-008**: System MUST use Bun commands for JS/TS package management and task execution.
 
 *Example of marking unclear requirements:*
 
-- **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
-- **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
+- **FR-009**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
+- **FR-010**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
 
 ### Key Entities *(include if feature involves data)*
 

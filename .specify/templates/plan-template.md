@@ -31,7 +31,17 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- [ ] Heavy computation and filesystem-intensive operations are assigned to Rust
+  (`src-tauri/`), not frontend Svelte code.
+- [ ] Every new/changed Tauri command has a typed TS contract planned under
+  `src/lib/types`.
+- [ ] UI work uses `shadcn-svelte` components and Tailwind utility classes; any
+  exception is explicitly justified.
+- [ ] State ownership is declared: Svelte stores for global UI state, Tauri `State`
+  for backend-managed persistence/runtime state.
+- [ ] FFmpeg work is isolated to a dedicated Rust module and exposed only via Tauri
+  command handlers.
+- [ ] Tooling commands for JS/TS use Bun.
 
 ## Project Structure
 
