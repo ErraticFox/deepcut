@@ -1,3 +1,5 @@
+import { openSettingsDialog } from "$lib/components/settings-dialog/controller.js";
+
 export type MenuItemDefinition = {
   label: string;
   disabled?: boolean;
@@ -12,6 +14,11 @@ export type MenuGroupDefinition = {
 export const MENU_DEFINITION: MenuGroupDefinition[] = [
   {
     label: "File",
-    items: [{ label: "(No actions yet)", disabled: true }],
+    items: [
+      {
+        label: "Settings",
+        action: () => openSettingsDialog({ source: "menubar" }),
+      },
+    ],
   },
 ];

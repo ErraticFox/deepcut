@@ -6,6 +6,7 @@
       const target = event.target;
       if (!(target instanceof HTMLElement)) return;
       if (["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName)) return;
+      if (target.isContentEditable) return;
 
       const handler = keyMap[shortcutKey(event)];
       if (handler) {

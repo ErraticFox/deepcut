@@ -1,6 +1,13 @@
+import {
+  SETTINGS_DIALOG_SHORTCUT,
+  openSettingsDialog,
+} from "$lib/components/settings-dialog/index.js";
+
 export type KeyMap = Record<string, () => void>;
 
-export const keyMap: KeyMap = {};
+export const keyMap: KeyMap = {
+  [SETTINGS_DIALOG_SHORTCUT]: () => openSettingsDialog({ source: "hotkey" }),
+};
 
 export function shortcutKey(event: KeyboardEvent): string {
   const modifiers: string[] = [];
