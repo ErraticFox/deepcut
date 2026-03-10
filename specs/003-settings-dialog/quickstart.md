@@ -37,12 +37,21 @@ Implement the first Settings dialog shell that can be opened from both menubar a
 bun run quality
 ```
 
+## Settings Invocation Notes
+- Both menubar (`File -> Settings`) and `Control+,` invoke the same shared controller.
+- Repeated invocation while already open is idempotent and re-focuses the existing dialog.
+- If an open request arrives before UI mount readiness, the request is queued and applied once the dialog host is ready.
+
 - Manual verification:
 1. Launch app.
 2. Open Settings via menubar.
 3. Close and verify focus return.
 4. Open Settings via `Control+,`.
 5. Trigger open repeatedly from both paths and verify only one dialog exists.
+
+## Validation Notes
+- 2026-03-09: Automated quality gate passed with `bun run quality` after settings-dialog implementation.
+- 2026-03-09: Manual desktop interaction validation pending in an interactive Tauri session.
 
 ## Expected Outcome
 A reusable Settings dialog foundation is in place, accessible from both required entry points, and ready for future settings content features.

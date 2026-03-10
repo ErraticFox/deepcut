@@ -11,8 +11,8 @@
 
 **Purpose**: Create the feature module skeleton used by all stories.
 
-- [ ] T001 Create settings dialog component directory and barrel export in `src/lib/components/settings-dialog/index.ts`
-- [ ] T002 Create settings dialog constants for dialog id and default shortcut in `src/lib/components/settings-dialog/constants.ts`
+- [X] T001 Create settings dialog component directory and barrel export in `src/lib/components/settings-dialog/index.ts`
+- [X] T002 Create settings dialog constants for dialog id and default shortcut in `src/lib/components/settings-dialog/constants.ts`
 
 ---
 
@@ -22,10 +22,10 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete.
 
-- [ ] T003 Create shared settings dialog controller with single-instance open/close actions in `src/lib/components/settings-dialog/controller.ts`
-- [ ] T004 [P] Add trigger source and focus-return tracking types in `src/lib/components/settings-dialog/types.ts`
-- [ ] T005 Create baseline `SettingsDialog` shell bound to controller open state in `src/lib/components/settings-dialog/SettingsDialog.svelte`
-- [ ] T006 Mount `SettingsDialog` at app layout level in `src/routes/+layout.svelte`
+- [X] T003 Create shared settings dialog controller with single-instance open/close actions in `src/lib/components/settings-dialog/controller.ts`
+- [X] T004 [P] Add trigger source and focus-return tracking types in `src/lib/components/settings-dialog/types.ts`
+- [X] T005 Create baseline `SettingsDialog` shell bound to controller open state in `src/lib/components/settings-dialog/SettingsDialog.svelte`
+- [X] T006 Mount `SettingsDialog` at app layout level in `src/routes/+layout.svelte`
 
 **Checkpoint**: Foundation ready; user stories can now be implemented.
 
@@ -37,9 +37,9 @@
 
 **Independent Test**: Launch app, select Settings in menubar, verify dialog opens and repeated selection focuses existing dialog.
 
-- [ ] T007 [US1] Add a `Settings` menubar item definition in `src/lib/components/app-menubar/menu-definition.ts`
-- [ ] T008 [US1] Wire the menubar Settings action to controller `open` with source `menubar` in `src/lib/components/app-menubar/menu-definition.ts`
-- [ ] T009 [US1] Ensure repeated menubar invocation is idempotent and re-focuses existing dialog in `src/lib/components/settings-dialog/controller.ts`
+- [X] T007 [US1] Add a `Settings` menubar item definition in `src/lib/components/app-menubar/menu-definition.ts`
+- [X] T008 [US1] Wire the menubar Settings action to controller `open` with source `menubar` in `src/lib/components/app-menubar/menu-definition.ts`
+- [X] T009 [US1] Ensure repeated menubar invocation is idempotent and re-focuses existing dialog in `src/lib/components/settings-dialog/controller.ts`
 
 **Checkpoint**: User Story 1 is independently functional.
 
@@ -51,9 +51,9 @@
 
 **Independent Test**: Launch app, press `Control+,`, verify dialog opens and repeated keypress does not create duplicates.
 
-- [ ] T010 [US2] Register `Control+,` settings hotkey handler in `src/lib/components/keyboard-manager/keymap.ts`
-- [ ] T011 [US2] Wire hotkey handler to controller `open` with source `hotkey` in `src/lib/components/keyboard-manager/keymap.ts`
-- [ ] T012 [US2] Preserve keyboard-manager input-field exclusion behavior while adding settings hotkey in `src/lib/components/keyboard-manager/KeyboardManager.svelte`
+- [X] T010 [US2] Register `Control+,` settings hotkey handler in `src/lib/components/keyboard-manager/keymap.ts`
+- [X] T011 [US2] Wire hotkey handler to controller `open` with source `hotkey` in `src/lib/components/keyboard-manager/keymap.ts`
+- [X] T012 [US2] Preserve keyboard-manager input-field exclusion behavior while adding settings hotkey in `src/lib/components/keyboard-manager/KeyboardManager.svelte`
 
 **Checkpoint**: User Story 2 is independently functional.
 
@@ -65,10 +65,10 @@
 
 **Independent Test**: Open dialog from either entry point, verify title/semantics, focus trap, keyboard close, and focus return.
 
-- [ ] T013 [US3] Implement accessible dialog title and description using shadcn-svelte dialog primitives in `src/lib/components/settings-dialog/SettingsDialog.svelte`
-- [ ] T014 [US3] Implement focus capture on open and focus restore on close in `src/lib/components/settings-dialog/controller.ts`
-- [ ] T015 [US3] Connect dialog close events to controller focus-return workflow in `src/lib/components/settings-dialog/SettingsDialog.svelte`
-- [ ] T016 [US3] Add guard handling for open requests before UI readiness in `src/lib/components/settings-dialog/controller.ts`
+- [X] T013 [US3] Implement accessible dialog title and description using shadcn-svelte dialog primitives in `src/lib/components/settings-dialog/SettingsDialog.svelte`
+- [X] T014 [US3] Implement focus capture on open and focus restore on close in `src/lib/components/settings-dialog/controller.ts`
+- [X] T015 [US3] Connect dialog close events to controller focus-return workflow in `src/lib/components/settings-dialog/SettingsDialog.svelte`
+- [X] T016 [US3] Add guard handling for open requests before UI readiness in `src/lib/components/settings-dialog/controller.ts`
 
 **Checkpoint**: User Story 3 is independently functional.
 
@@ -78,8 +78,8 @@
 
 **Purpose**: Final integration validation and documentation alignment.
 
-- [ ] T017 [P] Update settings invocation behavior notes in `specs/003-settings-dialog/quickstart.md`
-- [ ] T018 Run full quality gate and resolve issues with `bun run quality` from `D:\repos\deepcut`
+- [X] T017 [P] Update settings invocation behavior notes in `specs/003-settings-dialog/quickstart.md`
+- [X] T018 Run full quality gate and resolve issues with `bun run quality` from `D:\repos\deepcut`
 - [ ] T019 Run manual quickstart validation scenarios and record completion notes in `specs/003-settings-dialog/quickstart.md`
 
 ---
