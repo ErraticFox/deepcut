@@ -73,7 +73,9 @@ Examples of foundational tasks (adjust based on your project):
 - [ ] T010 Define/refresh TypeScript command contracts in `src/lib/types`
 - [ ] T011 [P] Add/update Rust Tauri command handlers in `src-tauri/src/`
 - [ ] T012 [P] Verify heavy processing remains in Rust modules (no frontend media compute)
-- [ ] T013 Validate Bun-based JS/TS scripts and dependency workflow
+- [ ] T013 Validate Bun-based JS/TS scripts: confirm `bun run lint` (ESLint) and
+  `bun run format:check` (Prettier) pass; run `bun run lint:rust` (clippy) and
+  `bun run format:rust:check` (cargo fmt) for any Rust changes
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 

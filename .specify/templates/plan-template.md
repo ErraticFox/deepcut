@@ -41,7 +41,11 @@
   for backend-managed persistence/runtime state.
 - [ ] FFmpeg work is isolated to a dedicated Rust module and exposed only via Tauri
   command handlers.
-- [ ] Tooling commands for JS/TS use Bun.
+- [ ] Tooling commands for JS/TS use Bun; `bun run lint` and `bun run format:check`
+  pass for all JS/TS/Svelte changes.
+- [ ] Rust changes pass `bun run lint:rust` (clippy -D warnings) and
+  `bun run format:rust:check` (cargo fmt --check).
+- [ ] `bun run quality` gate is green before marking the feature complete.
 
 ## Project Structure
 

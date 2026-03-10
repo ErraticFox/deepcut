@@ -1,22 +1,21 @@
 <!--
 Sync Impact Report
-Version change: N/A -> 1.0.0
+Version change: 1.0.0 -> 1.1.0
 Modified principles:
-- Template Principle 1 -> I. Backend-First Processing Boundary
-- Template Principle 2 -> II. Typed Tauri Command Contracts
-- Template Principle 3 -> III. Component and Styling Discipline
-- Template Principle 4 -> IV. State Ownership and Persistence
-- Template Principle 5 -> V. Rust Safety and Unsafe Policy
-- Added principle -> VI. FFmpeg Isolation Through Command Layer
+- None (principles unchanged)
+Modified sections:
+- Technical Constraints: added ESLint + Prettier mandate for JS/TS/Svelte;
+  added cargo clippy + cargo fmt mandate for Rust.
+- Development Workflow & Quality Gates: expanded JS/TS and Rust validation lines
+  to name specific tools and scripts; added `bun run quality` aggregate gate.
 Added sections:
-- Technical Constraints
-- Development Workflow & Quality Gates
+- None
 Removed sections:
 - None
 Templates requiring updates:
-- ✅ .specify/templates/plan-template.md
-- ✅ .specify/templates/spec-template.md
-- ✅ .specify/templates/tasks-template.md
+- ✅ .specify/templates/plan-template.md (Constitution Check: expanded tooling gate)
+- ✅ .specify/templates/tasks-template.md (T013: reference lint/format scripts)
+- ✅ .specify/templates/spec-template.md (no change required)
 - ✅ .specify/templates/commands/*.md (no files matched; no changes required)
 Follow-up TODOs:
 - None
@@ -80,6 +79,10 @@ and deterministic testing of media operations.
 - Backend stack is fixed to Tauri with Rust 1.75+ and async Rust for non-blocking I/O.
 - New backend commands MUST include typed payload definitions in `src/lib/types` and
   command-level validation for user input paths and media parameters.
+- JS/TS/Svelte code MUST be linted with ESLint (flat config) via `bun run lint` and
+  formatted with Prettier via `bun run format:check`. Both MUST pass before merge.
+- Rust code MUST pass `cargo clippy -- -D warnings` via `bun run lint:rust` and
+  `cargo fmt --check` via `bun run format:rust:check`. Both MUST pass before merge.
 
 ## Development Workflow & Quality Gates
 
@@ -88,9 +91,14 @@ and deterministic testing of media operations.
 - Feature specs MUST define contract impacts for any new or changed Tauri command.
 - Task breakdowns MUST include frontend type updates, Rust command work, and tests for
   command contracts and critical media paths.
-- JS/TS validation MUST run with Bun-based commands; Rust validation MUST run with Cargo.
+- JS/TS linting MUST run via `bun run lint` (ESLint) and format checks via
+  `bun run format:check` (Prettier) for all `.ts` and `.svelte` changes.
+- Rust linting MUST run via `bun run lint:rust` (`cargo clippy -D warnings`) and
+  format checks via `bun run format:rust:check` (`cargo fmt --check`) for all `.rs` changes.
+- All quality gates can be run together with `bun run quality` (svelte-check + ESLint +
+  Prettier check + clippy + cargo fmt check).
 - Pull requests MUST fail review when violating process boundaries, type-contract updates,
-  or FFmpeg isolation requirements.
+  FFmpeg isolation requirements, or when `bun run quality` does not pass.
 
 ## Governance
 
@@ -105,4 +113,4 @@ This constitution supersedes conflicting local practices and template defaults.
 - Compliance review: Every implementation plan, specification, and task list MUST include
   a constitution compliance check before coding begins and at pull request review.
 
-**Version**: 1.0.0 | **Ratified**: 2026-03-07 | **Last Amended**: 2026-03-07
+**Version**: 1.1.0 | **Ratified**: 2026-03-07 | **Last Amended**: 2026-03-09
