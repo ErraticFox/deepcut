@@ -21,7 +21,7 @@ Manual smoke test defined in quickstart.md is the acceptance gate.
 
 **Purpose**: Install the shadcn-svelte Menubar primitives — prerequisite for all implementation work.
 
-- [ ] T001 Install shadcn-svelte Menubar component: `bun x shadcn-svelte@latest add menubar` — generates `src/lib/components/ui/menubar/`
+- [X] T001 Install shadcn-svelte Menubar component: `bun x shadcn-svelte@latest add menubar` — generates `src/lib/components/ui/menubar/`
 
 **Checkpoint**: `src/lib/components/ui/menubar/index.ts` exists and exports Menubar primitives
 
@@ -35,9 +35,9 @@ Manual smoke test defined in quickstart.md is the acceptance gate.
 
 ### Implementation for User Story 1
 
-- [ ] T002 [US1] Create `src/lib/components/app-menubar/AppMenubar.svelte` — Menubar.Root shell that imports from `$lib/components/ui/menubar/index.js` (empty, no menu groups yet)
-- [ ] T003 [US1] Mount `<AppMenubar />` at the top of `src/routes/+layout.svelte` above `{@render children()}` with import from `$lib/components/app-menubar/AppMenubar.svelte`
-- [ ] T004 [US1] Run `bun run check` — verify 0 type errors after layout change
+- [X] T002 [US1] Create `src/lib/components/app-menubar/AppMenubar.svelte` — Menubar.Root shell that imports from `$lib/components/ui/menubar/index.js` (empty, no menu groups yet)
+- [X] T003 [US1] Mount `<AppMenubar />` at the top of `src/routes/+layout.svelte` above `{@render children()}` with import from `$lib/components/app-menubar/AppMenubar.svelte`
+- [X] T004 [US1] Run `bun run check` — verify 0 type errors after layout change
 
 **Checkpoint**: App launches, a menubar bar is visible at the top of the window on every route, `bun run check` passes with 0 errors
 
@@ -51,10 +51,10 @@ Manual smoke test defined in quickstart.md is the acceptance gate.
 
 ### Implementation for User Story 2
 
-- [ ] T005 [P] [US2] Create `src/lib/components/app-menubar/menu-definition.ts` — export `MenuItemDefinition`, `MenuGroupDefinition` types and `MENU_DEFINITION` constant with one "File" group containing a single `{ label: "(No actions yet)", disabled: true }` item
-- [ ] T006 [US2] Update `src/lib/components/app-menubar/AppMenubar.svelte` to import `MENU_DEFINITION` and iterate over groups/items using `Menubar.Menu`, `Menubar.Trigger`, `Menubar.Content`, `Menubar.Item` primitives (depends on T005)
-- [ ] T007 [US2] Run `bun run check` — verify 0 type errors after full component wiring
-- [ ] T007a [US2] Launch app via `bun run tauri dev` with system dark mode active; verify menubar renders with correct theme colors and produces no console errors; repeat with light mode (covers FR-006, SC-003)
+- [X] T005 [P] [US2] Create `src/lib/components/app-menubar/menu-definition.ts` — export `MenuItemDefinition`, `MenuGroupDefinition` types and `MENU_DEFINITION` constant with one "File" group containing a single `{ label: "(No actions yet)", disabled: true }` item
+- [X] T006 [US2] Update `src/lib/components/app-menubar/AppMenubar.svelte` to import `MENU_DEFINITION` and iterate over groups/items using `Menubar.Menu`, `Menubar.Trigger`, `Menubar.Content`, `Menubar.Item` primitives (depends on T005)
+- [X] T007 [US2] Run `bun run check` — verify 0 type errors after full component wiring
+- [X] T007a [US2] Launch app via `bun run tauri dev` with system dark mode active; verify menubar renders with correct theme colors and produces no console errors; repeat with light mode (covers FR-006, SC-003)
 
 **Checkpoint**: "File" menu opens and closes via click and Escape; disabled item renders without errors; `bun run check` passes; both light and dark mode validated explicitly
 
@@ -64,8 +64,8 @@ Manual smoke test defined in quickstart.md is the acceptance gate.
 
 **Purpose**: Final validation and confirm extensibility contract holds.
 
-- [ ] T008 Verify SC-004 extensibility: add a second group entry to `MENU_DEFINITION` in `src/lib/components/app-menubar/menu-definition.ts`, confirm it appears in the menubar with zero changes to `+layout.svelte` or `AppMenubar.svelte`, then revert
-- [ ] T009 Run `bun run check` for final clean-slate validation — must produce 0 errors and 0 warnings
+- [X] T008 Verify SC-004 extensibility: add a second group entry to `MENU_DEFINITION` in `src/lib/components/app-menubar/menu-definition.ts`, confirm it appears in the menubar with zero changes to `+layout.svelte` or `AppMenubar.svelte`, then revert
+- [X] T009 Run `bun run check` for final clean-slate validation — must produce 0 errors and 0 warnings
 
 ---
 
