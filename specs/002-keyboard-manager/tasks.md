@@ -20,7 +20,7 @@ description: "Task list for Keyboard Shortcut Manager"
 
 **Purpose**: Create the directory structure and barrel file for the new component.
 
-- [ ] T001 Create directory `src/lib/components/keyboard-manager/`
+- [X] T001 Create directory `src/lib/components/keyboard-manager/`
 
 ---
 
@@ -30,7 +30,7 @@ description: "Task list for Keyboard Shortcut Manager"
 
 **⚠️ CRITICAL**: T002 must be complete before T003 and T005 can begin.
 
-- [ ] T002 Implement `KeyMap` type, exported `keyMap` singleton, and `shortcutKey()` helper in `src/lib/components/keyboard-manager/keymap.ts`
+- [X] T002 Implement `KeyMap` type, exported `keyMap` singleton, and `shortcutKey()` helper in `src/lib/components/keyboard-manager/keymap.ts`
 
 **Checkpoint**: `keymap.ts` exports `KeyMap`, `keyMap`, and `shortcutKey` — ready for component and consumer use.
 
@@ -42,8 +42,8 @@ description: "Task list for Keyboard Shortcut Manager"
 
 **Independent Test**: Temporarily add `keyMap['Control+k'] = () => console.log('fired');` in `+layout.svelte`, press Ctrl+K, confirm log output, remove the test registration.
 
-- [ ] T003 [US1] Implement `KeyboardManager.svelte` with `$effect` keydown listener and `keyMap` dispatch in `src/lib/components/keyboard-manager/KeyboardManager.svelte` (depends on T002)
-- [ ] T004 [US1] Mount `<KeyboardManager />` in `src/routes/+layout.svelte` alongside `<ModeWatcher />` and `<AppMenubar />`
+- [X] T003 [US1] Implement `KeyboardManager.svelte` with `$effect` keydown listener and `keyMap` dispatch in `src/lib/components/keyboard-manager/KeyboardManager.svelte` (depends on T002)
+- [X] T004 [US1] Mount `<KeyboardManager />` in `src/routes/+layout.svelte` alongside `<ModeWatcher />` and `<AppMenubar />`
 
 **Checkpoint**: App runs without errors; a test keyMap entry fires on the matching key combination.
 
@@ -57,7 +57,7 @@ description: "Task list for Keyboard Shortcut Manager"
 
 **Note**: This story is implemented as part of `KeyboardManager.svelte` — the `tagName` guard in `handleKeydown` covers it. If T003 was implemented correctly per the quickstart, this story is already satisfied. The task below is an explicit verification and hardening pass.
 
-- [ ] T005 [US2] Verify and harden input-guard logic in `src/lib/components/keyboard-manager/KeyboardManager.svelte`: confirm `['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)` guard is present and covers all three element types (depends on T003)
+- [X] T005 [US2] Verify and harden input-guard logic in `src/lib/components/keyboard-manager/KeyboardManager.svelte`: confirm `['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)` guard is present and covers all three element types (depends on T003)
 
 **Checkpoint**: Shortcut handlers are silent while any of the three form element types has focus.
 
@@ -71,7 +71,7 @@ description: "Task list for Keyboard Shortcut Manager"
 
 **Note**: Like US2, correct US1 implementation already satisfies this story structurally (the `if (handler)` guard means `preventDefault` only fires on match). The task is an explicit correctness audit.
 
-- [ ] T006 [US3] Audit `handleKeydown` in `src/lib/components/keyboard-manager/KeyboardManager.svelte`: confirm `e.preventDefault()` is called only inside the `if (handler)` branch, with no unconditional invocation before the lookup (depends on T003)
+- [X] T006 [US3] Audit `handleKeydown` in `src/lib/components/keyboard-manager/KeyboardManager.svelte`: confirm `e.preventDefault()` is called only inside the `if (handler)` branch, with no unconditional invocation before the lookup (depends on T003)
 
 **Checkpoint**: F12 opens DevTools normally; no unregistered key combination is intercepted.
 
@@ -81,8 +81,8 @@ description: "Task list for Keyboard Shortcut Manager"
 
 **Purpose**: Ensure code quality gates pass and the temporary test registration (if added during verification) is removed.
 
-- [ ] T007 [P] Remove any temporary shortcut registrations added during manual testing in `src/routes/+layout.svelte`
-- [ ] T008 Run `bun run quality` (`svelte-check` + ESLint + Prettier check + clippy + cargo fmt check) and fix any reported issues across all changed files
+- [X] T007 [P] Remove any temporary shortcut registrations added during manual testing in `src/routes/+layout.svelte`
+- [X] T008 Run `bun run quality` (`svelte-check` + ESLint + Prettier check + clippy + cargo fmt check) and fix any reported issues across all changed files
 
 **Checkpoint**: `bun run quality` exits 0. Feature is complete and ready for merge.
 

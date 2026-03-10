@@ -60,9 +60,12 @@ export default [
   {
     ignores: [
       "build/**",
+      "dist/**",
+      "coverage/**",
       ".svelte-kit/**",
       "src-tauri/target/**",
       "node_modules/**",
+      "*.min.js",
       "*.config.js",
     ],
   },
