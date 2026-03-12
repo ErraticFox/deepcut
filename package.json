@@ -30,6 +30,7 @@
     "mode-watcher": "^1.1.0"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@internationalized/date": "^3.10.0",
     "@lucide/svelte": "^0.561.0",
     "@sveltejs/adapter-static": "^3.0.6",
@@ -37,6 +38,7 @@
     "@sveltejs/vite-plugin-svelte": "^5.0.0",
     "@tailwindcss/vite": "^4.1.18",
     "@tauri-apps/cli": "^2",
+    "@types/node": "^25.4.0",
     "@typescript-eslint/eslint-plugin": "^8.57.0",
     "@typescript-eslint/parser": "^8.57.0",
     "bits-ui": "^2.14.4",

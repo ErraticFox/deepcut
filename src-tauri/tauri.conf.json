@@ -21,6 +21,14 @@
       "csp": null
     }
   },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDY0NTc2MjVGNkE5RTE5QkUKUldTK0daNXFYMkpYWklBOXVPM2hOWVM3UUtITEdtbk9PK1dyL2VZVFdQZnBVS2RBQjlTNUVFeUcK",
+      "endpoints": [
+        "https://github.com/ErraticFox/deepcut/releases/latest/download/latest.json"
+      ]
+    }
+  },
   "bundle": {
     "active": true,
     "targets": "all",
